@@ -1,0 +1,41 @@
+[project]
+name = "researchlab-ai"
+version = "0.1.0"
+description = "ResearchLab AI - multi-agent research POC (milestone 1)"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.162.0",
+    "uvicorn==0.54.0",
+    "langgraph==1.2.17",
+    "mcp==2.3.0",
+    "google-genai==2.33.0",
+    "pydantic==2.14.1",
+    "pydantic-settings==2.16.1",
+    "httpx==0.28.1",
+    "sse-starlette==3.6.0",
+    "aiosqlite==0.22.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.1.1",
+    "pytest-asyncio==1.4.1",
+    "ruff==0.17.2",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*" = ["E501"]  # diagnostic scripts carry long prompt strings

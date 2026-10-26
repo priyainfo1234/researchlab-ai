@@ -1,0 +1,53 @@
+{
+  "_notice": "DEMO FIXTURES. Synthetic text written for offline testing. Not real sources; no claim here is factual.",
+  "documents": [
+    {
+      "slug": "rag-cost-profile",
+      "title": "Demo fixture: cost profile of retrieval-augmented generation",
+      "keywords": ["rag", "retrieval", "augmented", "cost", "infrastructure", "index", "embedding"],
+      "content": "Retrieval-augmented generation moves most cost into retrieval infrastructure such as an embedding pipeline and a vector index. There is no training run, so the upfront spend is small. Per-query cost grows with the number of retrieved passages sent to the model."
+    },
+    {
+      "slug": "finetune-cost-profile",
+      "title": "Demo fixture: cost profile of fine-tuning",
+      "keywords": ["fine-tuning", "finetuning", "cost", "compute", "gpu", "training", "data"],
+      "content": "Fine-tuning needs curated training data, GPU time and an evaluation set before the first useful model exists. The upfront spend is high compared with retrieval. Each refresh of the knowledge requires another training cycle."
+    },
+    {
+      "slug": "rag-grounding",
+      "title": "Demo fixture: grounding and hallucination behaviour of retrieval",
+      "keywords": ["rag", "retrieval", "grounding", "hallucination", "accuracy", "citations"],
+      "content": "Retrieval grounds answers in passages that can be shown to the user as citations. When retrieval finds the right passage the answer is usually well supported. When retrieval misses, the model may still answer fluently without support."
+    },
+    {
+      "slug": "finetune-style-domain",
+      "title": "Demo fixture: what fine-tuning is good at",
+      "keywords": ["fine-tuning", "finetuning", "accuracy", "domain", "style", "format", "terminology"],
+      "content": "Fine-tuning is effective for consistent tone, output format and domain terminology. It is a poor way to store facts that change often. Facts learned during training cannot be traced back to a document."
+    },
+    {
+      "slug": "rag-latency-a",
+      "title": "Demo fixture: latency measurement A",
+      "keywords": ["rag", "retrieval", "latency", "overhead", "deployment"],
+      "content": "In this fixture scenario with a remote index, retrieval latency added about 250 ms per query. Most of that time was network round trips to the index."
+    },
+    {
+      "slug": "rag-latency-b",
+      "title": "Demo fixture: latency measurement B",
+      "keywords": ["rag", "retrieval", "latency", "overhead", "deployment"],
+      "content": "In this fixture scenario with a co-located index, retrieval latency added about 40 ms per query. Caching of frequent queries reduced it further."
+    },
+    {
+      "slug": "freshness-governance",
+      "title": "Demo fixture: freshness and access control",
+      "keywords": ["freshness", "governance", "access", "update", "reindex", "delete", "rag"],
+      "content": "With retrieval, knowledge is updated by re-indexing documents and removed by deleting them. Access rules can be applied per document at query time. Trained weights cannot selectively forget a single document."
+    },
+    {
+      "slug": "hybrid-approach",
+      "title": "Demo fixture: combining both approaches",
+      "keywords": ["hybrid", "combined", "rag", "fine-tuning", "finetuning", "deployment", "style"],
+      "content": "Many deployments fine-tune for tone and format and use retrieval for facts. This keeps the factual layer updatable while giving consistent answers. It also doubles the operational surface that must be maintained."
+    }
+  ]
+}
